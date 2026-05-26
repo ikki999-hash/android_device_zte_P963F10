@@ -1,11 +1,25 @@
+#
+# system.prop for ZTE Blade A35 Core (P963F10)
+#
+
+# USB Controller (The Narzo 20i value is perfect for the Unisoc physical controller link)
 sys.usb.controller=musb-hdrc.0.auto
 
-# Crypto
-#ro.crypto.type=file
-#ro.crypto.dm_default_key.options_format.version=2
-#ro.crypto.metadata.enabled=true
-#ro.crypto.uses_fs_ioc_add_encryption_key=true
+# Encryption / File-Based Decryption Handling (Uncommented for Android 12)
+ro.crypto.type=file
+ro.crypto.dm_default_key.options_format.version=2
+ro.crypto.metadata.enabled=true
+ro.crypto.uses_fs_ioc_add_encryption_key=true
 
+# Keymaster Configuration (Matches the Unisoc Keymaster 4.0/4.1 component path)
+keymaster_ver=4.1
+ro.hardware.keystore=unisoc
+ro.hardware.gatekeeper=unisoc
 
-# Keymaster
-#keymaster_ver=4.1
+# Dynamic/Virtual A/B Partition Triggers
+ro.virtual_ab.enabled=true
+ro.virtual_ab.compression.enabled=true
+
+# TWRP Specific Runtime Triggers
+tw.status_bar_left_padding=40
+tw.status_bar_right_padding=40
