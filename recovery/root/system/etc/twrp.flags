@@ -1,1 +1,18 @@
+# Removable storage mounts
+/external_sd    vfat    /dev/block/mmcblk1p1    /dev/block/mmcblk1    flags=display="MicroSD Card";storage;wipeingui;removable
+/usb_otg        vfat    /dev/block/sda1         /dev/block/sda        flags=display="USB-OTG";storage;wipeingui;removable
 
+# Hardware Parameters (Backlight & Vibrator Engine)
+/sys/class/backlight/panel0-backlight    display="Backlight Control Hardware"
+/sys/class/timed_output/vibrator          display="Vibrator Driver Link"
+
+# Security & Factory Partitions to safeguard IMEI/Calibration
+/persist        emmc    /dev/block/by-name/persist                    flags=display="Persist (IMEI/Calibration)";backup=1
+/mnt/vendor     ext4    /dev/block/by-name/prodnv                     flags=display="ProdNV (Network Configs)";backup=1
+/ztecfg         ext4    /dev/block/by-name/ztecfg                     flags=display="ZTE Custom Configs";backup=1
+
+# Flashable Images mapping for UI manual installations
+/boot           emmc    /dev/block/by-name/boot                       flags=display="Boot Image";backup=1;flashimg=1
+/vendor_boot    emmc    /dev/block/by-name/vendor_boot                flags=display="Vendor Boot Image";backup=1;flashimg=1
+/dtbo           emmc    /dev/block/by-name/dtbo                       flags=display="DTBO Image";backup=1;flashimg=1
+/vbmeta         emmc    /dev/block/by-name/vbmeta                     flags=display="VBMeta Image";backup=1;flashimg=1
