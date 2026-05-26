@@ -5,8 +5,5 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := $(call my-dir)
-
-ifeq ($(TARGET_DEVICE),P963F10)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/twrp_P963F10.mk
