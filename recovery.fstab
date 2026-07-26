@@ -19,7 +19,7 @@
 /vendor_boot           emmc      /dev/block/by-name/vendor_boot           flags=display="Vendor Boot Ramdisk";slotselect;backup=1
 /misc                  emmc      /dev/block/by-name/misc                  flags=display="Misc Control"
 /metadata              f2fs      /dev/block/by-name/metadata              flags=display="Metadata"
-/data                  f2fs      /dev/block/by-name/userdata              flags=display="User Data Operations";encryptable=footer
+/data                  f2fs      /dev/block/by-name/userdata              flags=display="User Data Operations";forcefdeorfbe=footer
 /cache                 ext4      /dev/block/by-name/cache                 flags=display="Cache Space"
 
 # Core Super Logical Sub-Partitions

@@ -14,7 +14,10 @@ ALLOW_MISSING_DEPENDENCIES := true
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     vbmeta_system \
+    vbmeta_system_ext \
+    vbmeta_product \
     boot \
+    vendor_boot \
     product \
     system_ext \
     vendor \
@@ -108,3 +111,7 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
+
+# Decryption (device uses file-based encryption with metadata encryption)
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
